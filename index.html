@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QQ 管理员知识测试试卷</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- Tailwind 配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#12b7f5',
+            secondary: '#07c160',
+            accent: '#f59e0b',
+            danger: '#ef4444',
+            neutral: '#64748b',
+            light: '#f8fafc',
+            dark: '#0f172a'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .paper-shadow {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .question-card {
+        transition: all 0.3s ease;
+      }
+      .question-card:hover {
+        transform: translateY(-2px);
+      }
+      .btn-submit {
+        transition: all 0.3s ease;
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(18, 183, 245, 0.4);
+      }
+      .answer-highlight {
+        transition: all 0.2s ease;
+      }
+      .answer-highlight.correct {
+        background-color: rgba(7, 193, 96, 0.1);
+        border-color: #07c160;
+      }
+      .answer-highlight.incorrect {
+        background-color: rgba(239, 68, 68, 0.1);
+        border-color: #ef4444;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-4xl">
+    <!-- 试卷头部 -->
+    <div class="bg-white rounded-2xl paper-shadow p-6 mb-6">
+      <h1 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-center text-dark mb-2">
+        <i class="fa fa-qq text-primary mr-2"></i>QQ 管理员知识测试试卷
+      </h1>
+      <div class="flex flex-col md:flex-row justify-between items-center mt-6">
+        <div class="w-full md:w-1/2 mb-4 md:mb-0">
+          <label for="name" class="block text-neutral font-medium mb-1">姓名：</label>
+          <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="请填写你的姓名">
+        </div>
+        <div class="w-full md:w-1/2">
+          <label for="score" class="block text-neutral font-medium mb-1">得分：</label>
+          <input type="text" id="score" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="将在此显示得分" readonly>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 单选题部分 -->
+    <div class="bg-white rounded-2xl paper-shadow p-6 mb-6">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center">
+        <i class="fa fa-circle-o text-primary mr-2"></i>一、单选题（每题 5 分，共 40 分）
+      </h2>
+      
+      <!-- 单选题1 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">1</div>
+          <div>
+            <p class="font-medium text-dark mb-3">QQ 群管理员不可以执行以下哪项操作？</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q1" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 批准成员入群申请</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q1" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 移除群成员</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q1" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">C. 修改群公告</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q1" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">D. 更改群主身份</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 单选题2 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">2</div>
+          <div>
+            <p class="font-medium text-dark mb-3">当群内出现有人发布暴力血腥图片时，管理员应首先（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q2" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 与发布者私聊沟通</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q2" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">B. 立即移除发布者</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q2" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">C. 警告发布者下次注意</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q2" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 向群主报告情况</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 单选题3 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">3</div>
+          <div>
+            <p class="font-medium text-dark mb-3">QQ 群最多可以设置（  ）个管理员。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q3" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 3</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q3" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 5</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q3" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">C. 6</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q3" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 10</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 单选题4 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">4</div>
+          <div>
+            <p class="font-medium text-dark mb-3">管理员在修改群公告时，以下做法正确的是（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q4" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 随意发布未经证实的谣言</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q4" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 仅发布与群主题无关的广告信息</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q4" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">C. 清晰标注重要通知和规则</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q4" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 用大量表情符号导致内容难以阅读</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 单选题5 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">5</div>
+          <div>
+            <p class="font-medium text-dark mb-3">发现群成员在群内进行诈骗活动，管理员应该（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q5" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 当作没看见</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q5" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 加入诈骗活动</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q5" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">C. 立即踢出群并举报</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q5" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 提醒群成员注意但不处理</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 单选题6 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">6</div>
+          <div>
+            <p class="font-medium text-dark mb-3">新成员入群后，管理员较好的做法是（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q6" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 置之不理</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q6" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">B. 发送欢迎语并告知群规</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q6" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">C. 马上安排其完成任务</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q6" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 直接移出群聊</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 单选题7 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">7</div>
+          <div>
+            <p class="font-medium text-dark mb-3">当群内发生成员激烈争吵时，管理员首先要做的是（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q7" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 加入争吵发表自己看法</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q7" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 直接把双方都踢出群</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q7" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">C. 制止争吵并引导私下解决</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q7" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 截屏发在其他群里讨论</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 单选题8 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">8</div>
+          <div>
+            <p class="font-medium text-dark mb-3">QQ 管理员自身不应该（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q8" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 严格遵守群规</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q8" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 带头活跃群气氛</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q8" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">C. 泄露群成员隐私信息</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q8" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 及时处理群内事务</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 多选题部分 -->
+    <div class="bg-white rounded-2xl paper-shadow p-6 mb-6">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center">
+        <i class="fa fa-square-o text-primary mr-2"></i>二、多选题（每题 8 分，共 32 分）
+      </h2>
+      
+      <!-- 多选题1 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">1</div>
+          <div>
+            <p class="font-medium text-dark mb-3">QQ 群管理员的职责包括（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="checkbox" name="q9" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 维护群内秩序</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q9" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 审核入群申请</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q9" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">C. 清理违规内容</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q9" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 组织群内活动</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 多选题2 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">2</div>
+          <div>
+            <p class="font-medium text-dark mb-3">以下哪些属于群内违规行为，管理员需要处理？（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="checkbox" name="q10" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 发布反动言论</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q10" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 频繁发送垃圾广告</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q10" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">C. 分享学习资料</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q10" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 辱骂其他群成员</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 多选题3 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">3</div>
+          <div>
+            <p class="font-medium text-dark mb-3">管理员在处理群成员纠纷时，应该（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="checkbox" name="q11" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 保持公平公正</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q11" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 听取双方陈述</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q11" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">C. 直接判定一方错误</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q11" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 依据群规进行处理</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 多选题4 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">4</div>
+          <div>
+            <p class="font-medium text-dark mb-3">为了让 QQ 群健康发展，管理员可以采取的措施有（  ）。</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="checkbox" name="q12" value="A" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">A. 定期清理不活跃成员</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q12" value="B" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">B. 鼓励成员积极交流</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q12" value="C" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">C. 不定期更新群规</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" name="q12" value="D" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">D. 对优秀成员给予表彰</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 判断题部分 -->
+    <div class="bg-white rounded-2xl paper-shadow p-6 mb-6">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center">
+        <i class="fa fa-check-square-o text-primary mr-2"></i>三、判断题（每题 4 分，共 28 分）
+      </h2>
+      
+      <!-- 判断题1 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">1</div>
+          <div>
+            <p class="font-medium text-dark mb-3">QQ 群管理员可以随意解散群。（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q13" value="true" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">√ 正确</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q13" value="false" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">× 错误</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 判断题2 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">2</div>
+          <div>
+            <p class="font-medium text-dark mb-3">只要群成员数量多，群内有少量违规内容没关系。（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q14" value="true" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">√ 正确</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q14" value="false" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">× 错误</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 判断题3 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">3</div>
+          <div>
+            <p class="font-medium text-dark mb-3">管理员可以根据自己喜好随意踢出群成员。（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q15" value="true" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">√ 正确</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q15" value="false" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">× 错误</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 判断题4 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">4</div>
+          <div>
+            <p class="font-medium text-dark mb-3">及时回复群成员的合理问题是管理员的职责之一。（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q16" value="true" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">√ 正确</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q16" value="false" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">× 错误</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 判断题5 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">5</div>
+          <div>
+            <p class="font-medium text-dark mb-3">群主可以随时收回管理员的权限。（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q17" value="true" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">√ 正确</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q17" value="false" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">× 错误</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 判断题6 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl mb-4 border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">6</div>
+          <div>
+            <p class="font-medium text-dark mb-3">管理员可以在群内发布任何自己想发的内容。（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q18" value="true" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">√ 正确</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q18" value="false" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">× 错误</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 判断题7 -->
+      <div class="question-card bg-gray-50 p-5 rounded-xl border border-gray-200">
+        <div class="flex items-start">
+          <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0">7</div>
+          <div>
+            <p class="font-medium text-dark mb-3">发现群内有违规信息，管理员删除后不需要告知其他成员。（  ）</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="q19" value="true" class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                <span class="ml-2">√ 正确</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="q19" value="false" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 answer-highlight">
+                <span class="ml-2">× 错误</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 操作按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <button id="submitBtn" class="btn-submit w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-lg flex items-center justify-center">
+        <i class="fa fa-check mr-2"></i>提交试卷
+      </button>
+      <button id="resetBtn" class="w-full sm:w-auto bg-gray-200 hover:bg-gray-300 text-dark font-medium py-3 px-8 rounded-lg flex items-center justify-center transition-all">
+        <i class="fa fa-refresh mr-2"></i>重置试卷
+      </button>
+    </div>
+    
+    <!-- 结果弹窗 -->
+    <div id="resultModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-2xl p-6 max-w-md w-full paper-shadow transform transition-all">
+        <h3 class="text-2xl font-bold text-dark mb-4 text-center" id="resultTitle">测试结果</h3>
+        <div class="text-center mb-6" id="resultScore">你的得分：0 分</div>
+        <div class="mb-6" id="resultFeedback">
+          感谢你完成QQ管理员知识测试，你的成绩将显示在这里。
+        </div>
+        <div class="flex justify-center gap-3">
+          <button id="closeModalBtn" class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-lg transition-all">
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const submitBtn = document.getElementById('submitBtn');
+      const resetBtn = document.getElementById('resetBtn');
+      const resultModal = document.getElementById('resultModal');
+      const resultTitle = document.getElementById('resultTitle');
+      const resultScore = document.getElementById('resultScore');
+      const resultFeedback = document.getElementById('resultFeedback');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const nameInput = document.getElementById('name');
+      
+      // 正确答案配置
+      const correctAnswers = {
+        q1: 'D',
+        q2: 'B',
+        q3: 'C',
+        q4: 'C',
+        q5: 'C',
+        q6: 'B',
+        q7: 'C',
+        q8: 'C',
+        q9: ['A', 'B', 'C', 'D'],
+        q10: ['A', 'B', 'D'],
+        q11: ['A', 'B', 'D'],
+        q12: ['A', 'B', 'C', 'D'],
+        q13: 'false',
+        q14: 'false',
+        q15: 'false',
+        q16: 'true',
+        q17: 'true',
+        q18: 'false',
+        q19: 'false'
+      };
+      
+      // 提交试卷
+      submitBtn.addEventListener('click', function() {
+        if (!nameInput.value.trim()) {
+          alert('请先填写姓名');
+          return;
+        }
+        
+        let score = 0;
+        let correctCount = 0;
+        let totalQuestions = 0;
+        
+        // 单选题评分
+        for (let i = 1; i <= 8; i++) {
+          totalQuestions++;
+          const question = document.querySelector(`input[name="q${i}"]:checked`);
+          if (question && question.value === correctAnswers[`q${i}`]) {
+            score += 5;
+            correctCount++;
+            markAnswerCorrect(`q${i}`, true);
+          } else {
+            markAnswerCorrect(`q${i}`, false);
+          }
+        }
+        
+        // 多选题评分
+        for (let i = 9; i <= 12; i++) {
+          totalQuestions++;
+          const question = document.getElementsByName(`q${i}`);
+          const userAnswers = [];
+          let isCorrect = true;
+          
+          for (let j = 0; j < question.length; j++) {
+            if (question[j].checked) {
+              userAnswers.push(question[j].value);
+            }
+          }
+          
+          // 检查答案是否完全正确
+          if (userAnswers.length !== correctAnswers[`q${i}`].length) {
+            isCorrect = false;
+          } else {
+            for (let j = 0; j < userAnswers.length; j++) {
+              if (!correctAnswers[`q${i}`].includes(userAnswers[j])) {
+                isCorrect = false;
+                break;
+              }
+            }
+          }
+          
+          if (isCorrect) {
+            score += 8;
+            correctCount++;
+            markAnswerCorrect(`q${i}`, true);
+          } else {
+            markAnswerCorrect(`q${i}`, false);
+          }
+        }
+        
+        // 判断题评分
+        for (let i = 13; i <= 19; i++) {
+          totalQuestions++;
+          const question = document.querySelector(`input[name="q${i}"]:checked`);
+          if (question && question.value === correctAnswers[`q${i}`]) {
+            score += 4;
+            correctCount++;
+            markAnswerCorrect(`q${i}`, true);
+          } else {
+            markAnswerCorrect(`q${i}`, false);
+          }
+        }
+        
+        // 显示结果
+        document.getElementById('score').value = score + ' 分';
+        resultScore.textContent = `你的得分：${score} 分`;
+        
+        let feedback = `恭喜你，${nameInput.value}！你完成了QQ管理员知识测试。`;
+        
+        if (score >= 90) {
+          feedback += ' 你的成绩非常优秀，对QQ管理员职责有深入的了解！';
+          resultTitle.textContent = '优秀！';
+          resultTitle.classList.add('text-secondary');
+        } else if (score >= 70) {
+          feedback += ' 你的成绩良好，基本掌握了QQ管理员的职责和操作。';
+          resultTitle.textContent = '良好！';
+          resultTitle.classList.add('text-accent');
+        } else if (score >= 60) {
+          feedback += ' 你的成绩合格，还需要进一步学习QQ管理员的相关知识。';
+          resultTitle.textContent = '合格';
+          resultTitle.classList.add('text-neutral');
+        } else {
+          feedback += ' 你的成绩未达标，需要认真学习QQ管理员的职责和操作规范。';
+          resultTitle.textContent = '需加强学习';
+          resultTitle.classList.add('text-danger');
+        }
+        
+        feedback += `\n\n你答对了 ${correctCount} 题，共 ${totalQuestions} 题。`;
+        resultFeedback.textContent = feedback;
+        
+        // 显示弹窗
+        resultModal.classList.remove('hidden');
+      });
+      
+      // 重置试卷
+      resetBtn.addEventListener('click', function() {
+        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+          input.checked = false;
+          input.parentElement.classList.remove('correct', 'incorrect');
+        });
+        document.getElementById('score').value = '';
+        nameInput.value = '';
+      });
+      
+      // 关闭弹窗
+      closeModalBtn.addEventListener('click', function() {
+        resultModal.classList.add('hidden');
+      });
+      
+      // 标记答案是否正确
+      function markAnswerCorrect(questionId, isCorrect) {
+        const questionElements = document.getElementsByName(questionId);
+        questionElements.forEach(element => {
+          if (element.type === 'radio' || element.type === 'checkbox') {
+            const label = element.closest('label');
+            if (isCorrect) {
+              label.classList.add('answer-highlight', 'correct');
+              label.classList.remove('answer-highlight', 'incorrect');
+            } else {
+              label.classList.add('answer-highlight', 'incorrect');
+              label.classList.remove('answer-highlight', 'correct');
+              
+              // 标记正确答案
+              const correctAnswerElements = document.querySelectorAll(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+              correctAnswerElements.forEach(correctElement => {
+                const correctLabel = correctElement.closest('label');
+                correctLabel.classList.add('answer-highlight', 'correct');
+                correctLabel.classList.remove('answer-highlight', 'incorrect');
+              });
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
